@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=.0">
+    <link rel="stylesheet" href="sudoku.css" />
+    <title>Sudoku_maker</title>
+</head>
+
+<body>
+    <div class="title">Sudoku</div>    
+
+    <div class="main">
+      <div class="sudoku-container" id="sudoku-container"></div>
+
+      <div class="underLine">
+
+        <div class="attempsLayout">
+          <div type="text" class="attempsText" id="attempsText">빈칸 수 :</div>
+          <input class="attempsInput" id="attempsValue">
+        </div>
+
+        <div class="dtnLayout">
+          <button class="btn" id="maker_btn">생성</button>
+          <button class="btn" id="solve_btn">정답</button>
+          <button class="btn" id="print_btn">인쇄</button>
+        </div>
+        
+      </div>
+    </div>
+
+   <script src="sudoku.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+.title {
+    padding-bottom: 10px;
+    font-size: xx-large;
+    font-weight: 900;
+    border-bottom: 4px solid black;
+    margin-bottom: 10px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 스도쿠 컨테이너 및 셀*/
+.sudoku-container {
+    display: grid;
+    grid-template-columns: repeat(9, 50px);
+    grid-template-rows: repeat(9, 50px);
+    gap: 2px;
+    padding: 40px;
+    width: fit-content;
+}
+
+.sudoku-cell {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+    font-size: 20px;
+}
+
+.sudoku-cell input {
+    width: 90%;
+    height: 90%;
+    text-align: center;
+    font-size: 20px;
+    border: none;
+}
+
+/* 3*3 박스 테두리 */
+.sudoku-cell:nth-child(3n) {
+    border-right: 3px solid black;
+}
+
+.sudoku-cell:nth-child(3n+1) {
+    border-left: 3px solid black;
+}
+
+.sudoku-cell:nth-child(-n+9) {
+    border-top: 3px solid black;
+}
+
+.sudoku-cell:nth-child(n+28):nth-child(-n+36) {
+    border-top: 3px solid black;
+}
+
+.sudoku-cell:nth-child(n+55):nth-child(-n+63) {
+    border-top: 3px solid black;
+}
+
+.sudoku-cell:nth-child(n+73):nth-child(-n+81) {
+    border-bottom: 3px solid black;
+}
+
+
+/* 기능UI */
+.underLine {
+    display: inline-flex; 
+    align-items: center;
+    margin-left: 90px;
+}
+
+.attempsLayout {
+    display: flex;
+    align-items: center;
+}
+
+.attempsText {
+    font-size: large;
+    font-weight: 700;
+}
+
+.attempsInput {
+    margin-left: 10px;
+    width: 50px;
+    height: 25px;
+    text-align: center;
+    font-size: medium;
+}
+
+.dtnLayout {
+    padding: 10px;
+}
+
+.btn {
+    font-weight: 700;
+    background-color: white;
+    padding: 5px 10px;
+}
+
+/* print 기능 */
+
+@media print {
+    .sudoku-cell {
+    background-color: #EBF5FF !important;
+    -webkit-print-color-adjust:exact;
+    }
+
+    .title {
+        display: none;
+    }
+
+    .underLine {
+        display: none;
+    }
+
+    body {
+        min-height: 80dvb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sudoku-container {
+        scale: 135%; 
+    }
+}
